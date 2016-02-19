@@ -1,9 +1,9 @@
 AncestryDNA Workshop: Genomics at Scale
----------------------------------------
+=======================================
 Computational, Evolutionary and Human Genomics
 ([CEHG](http://web.stanford.edu/dept/cehg/cgi-bin/cehg-symposium/program))
-Symposium
-Stanford University, Palo Alto, California
+Symposium<br>
+Stanford University, Palo Alto, California<br>
 March 2, 2016
 
 ### Introduction
@@ -24,10 +24,39 @@ this is helpful for working through the examples on site.
 
 ### Getting started
 
-Install the following packages:
+Download ADMIXTURE 1.3.0:
 
-* lattice
-* latticeExtra
-* Hmisc
-* ggplot2
-* data.table
+Install the following R packages: lattice, latticeExtra, Hmisc, ggplot2,
+data.table.
+
+Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
+output.
+
+### 1000 Genomes panel
+
+Meaning of population labels from 1000 Genomes panel, according to
+Supplementary Table 1 of the most recent 1000 Genomes article
+([link](http://dx.doi.org/10.1038/nature15393)).
+
+<pre> code  meaning
+  ACB  African Caribbean in Barbados.
+  ASW  People with African Ancestry in Southwest USA.
+  CDX  Chinese Dai in Xishuangbanna, China.
+  CEU  Utah residents (CEPH) with Northern and Western European ancestry.
+  CHB  Han Chinese in Beijing, China.
+  CHD  Han Chinese from Denver, Colorado.
+  CHS  Southern Han Chinese.
+  CLM  Colombians in Medellin, Colombia.
+  FIN  Finnish in Finland.
+  GIH  Gujarati Indians in Houston, TX, USA.
+  GBR  British in England and Scotland.
+  IBS  Iberian Populations in Spain.
+  JPT  Japanese in Tokyo, Japan.
+  KHV  Kinh in Ho Chi Minh City, Vietnam.
+  LWK  Luhya in Webuye, Kenya.
+  MXL  People with Mexican Ancestry in Los Angeles, CA, USA.
+  PEL  Peruvians in Lima, Peru.
+  PUR  Puerto Ricans in Puerto Rico.
+  TSI  Toscani in Italia.
+  YRI  Yoruba in Ibadan, Nigeria.
+</pre>
