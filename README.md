@@ -35,7 +35,7 @@ output.
 ### 1000 Genomes panel
 
 Meaning of population labels from 1000 Genomes panel, according to
-Supplementary Table 1 of the most recent 1000 Genomes article
+Supplementary Table 1 of the most recent *1000 Genomes* paper
 ([link](http://dx.doi.org/10.1038/nature15393)).
 
 <pre> code  meaning
