@@ -24,10 +24,12 @@ this is helpful for working through the examples on site.
 
 ### Getting started
 
-Download ADMIXTURE 1.3.0:
+Download ADMIXTURE 1.3.0.
+
+Optionally, install git.
 
 Install the following R packages: lattice, latticeExtra, Hmisc, ggplot2,
-data.table.
+data.table, maps.
 
 Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
 output.
