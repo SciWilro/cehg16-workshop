@@ -12,8 +12,8 @@
 geno.file <- "peter_carbonetto_ancestry1.txt"
 bim.file  <- "1kg_hgdp.bim"
 out.file  <- "peter_pcarbonetto1"
-fid       <- 0
 iid       <- "pc1"
+fid       <- 0
 
 # READ GENOTYPE DATA
 # ------------------
