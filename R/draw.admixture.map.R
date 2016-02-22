@@ -4,7 +4,7 @@ library(maps)
 
 # SCRIPT PARAMETERS
 # -----------------
-k <- 1
+k <- 2
 map.data.file <- "../data/mapdata.admixture.K=11.ancestry.txt"
 
 # Read the map data.
@@ -14,7 +14,7 @@ locs <- transform(locs,K = factor(K))
 locs <- transform(locs,OR = cut(pmin(OR,999),breaks = c(0,1,2,10,100,1000)))
 
 # Keep only map data for the selected population.
-locs <- subset(locs,K == 2)
+locs <- subset(locs,K == k)
 
 # Display the World map.
 dev.new(height = 6,width = 13.5)
@@ -36,7 +36,10 @@ print(ggplot() + theme_minimal() +
       scale_color_manual(values=c("lightskyblue","dodgerblue","darkorange",
                            "red","darkred")) +
       coord_cartesian(xlim = c(-180,190),ylim = c(-55,80)) +
-      scale_x_continuous(breaks = NULL) + 
-      scale_y_continuous(breaks = NULL) + 
-      theme(panel.grid.major = element_blank(),
-            panel.grid.minor = element_blank()))
+      scale_x_continuous(breaks = seq(-180,190,10)) + 
+      scale_y_continuous(breaks = seq(-55,80,10)) + 
+      theme(panel.grid.major = element_line(color = "lightskyblue",size = 0.1),
+            panel.grid.minor = element_blank(),
+            axis.text        = element_text(size = 8)) +
+      labs(title = paste("file = ",map.data.file,", K = ",k,sep=""),
+           x = "", y = ""))
