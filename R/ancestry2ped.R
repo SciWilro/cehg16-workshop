@@ -9,8 +9,8 @@
 # geno.file, which contains the genotypes in a file downloaded from
 # Ancestry.com; (2) bim.file, the list of SNPs to keep (set to NULL to
 # retain all the genotype data).
-geno.file <- "/DNAData2/peter/cehg16/private/peter_carbonetto_ancestry1.txt"
-bim.file  <- "/DNAData2/peter/cehg16/public/panel/1kg_hgdp.bim"
+geno.file <- "peter_carbonetto_ancestry1.txt"
+bim.file  <- "1kg_hgdp.bim"
 out.file  <- "peter_pcarbonetto1"
 fid       <- 0
 iid       <- "pc1"

@@ -1,13 +1,11 @@
 # This script plots population-associated ancestral birth location
-# data on a world map.
+# data on a world map. Before running this script, you need to specify
+# two parameters:
 #
-# Before running this script, you need to specify two parameters:
+#   k: index of ancestral population (1-11).
 #
-#   k              index of ancestral population (1-11).
-#
-#   map.data.file  space-delimited text file containing map data
-#                  (sample counts, latitudes, longitudes and odds
-#                  ratios).
+#   map.data.file: space-delimited text file containing map data
+#   (sample counts, latitudes, longitudes and odds ratios).
 #
 library(ggplot2)
 library(maps)
