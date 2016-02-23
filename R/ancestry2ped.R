@@ -10,8 +10,8 @@
 # Ancestry.com; (2) bim.file, the list of SNPs to keep (set to NULL to
 # retain all the genotype data).
 geno.file <- "peter_carbonetto_ancestry1.txt"
-bim.file  <- "1kg_hgdp.bim"
-out.file  <- "peter_pcarbonetto1"
+bim.file  <- "../data/panel/1kg_hgdp.bim"
+out.file  <- "peter_pcarbonetto_ancestry1"
 iid       <- "pc1"
 fid       <- 0
 
