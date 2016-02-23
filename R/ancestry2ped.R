@@ -1,16 +1,20 @@
-# Convert genotypes in a text file downloaded from your AncestryDNA
-# account (# https://dna.ancestry/com/rawDownload) into a PLINK .ped
-# file.
-
-# There are two variables you need to set to run this script: (1)
-# geno.file, which contains the genotypes in a file downloaded from
-# Ancestry.com; (2) bim.file, the list of SNPs to keep (set to NULL to
-# retain all the genotype data).
-
-# TO DO: Explain here what this script does.
+# This R script converts genotypes stored in a text file downloaded
+# from your AncestryDNA account (https://dna.ancestry/com/rawDownload)
+# into a PLINK .ped file. There is probably a combination of PLINK
+# commands that could accomplish some of what this script does in R.
 #
-# Probably a combination of PLINK commands that could accomplish the
-# same thing.
+# Several variables need to be set to run this script:
+#
+#   geno.file   file containing AncestryDNA genotype data.
+#   out.prefix  name of .map and .ped files to generate.
+#   iid         sample identifier in PLINK file.
+#   fid         family identifier in PLINK file.
+#   bim.file    Optionally, you can specify a PLINK .bim file to
+#               match the SNPs against. The final .ped file will
+#               contain genotypes for exactly the SNPs listed in this
+#               .bim file; for any SNPs that are not in the AncestryDNA
+#               genotype file, the genotypes are set to missing ("0").
+#
 
 # SCRIPT PARAMETERS
 # -----------------

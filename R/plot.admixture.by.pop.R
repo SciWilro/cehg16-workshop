@@ -1,4 +1,4 @@
-# This script summarizes the distribution of admixture proportions
+# This R script summarizes the distribution of admixture proportions
 # across a data set for a single ancestral population. Here we assume
 # that we have a collection of labeled samples, and we compile summary
 # statistics for each set of samples with the same label.
