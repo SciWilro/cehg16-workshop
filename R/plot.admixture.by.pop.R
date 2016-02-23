@@ -21,7 +21,7 @@ names(panel) <- c("fid","iid","pid","mid","sex","pheno")
 cat("Loading group labels assigned to samples.\n")
 labels           <- read.table(labels.file,as.is = "id",header = TRUE)
 rownames(labels) <- labels$id
-panel <- cbind(panel,data.frame(label = labels[panel$iid,which.label]))
+panel <- cbind(panel,data.frame(label = labels[panel$iid,"label"]))
 rm(labels)
 
 # LOAD ADMIXTURE ESTIMATES
