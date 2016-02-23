@@ -3,11 +3,11 @@ library(ggplot2)
 
 # SCRIPT PARAMETERS
 # -----------------
-k           <- 7
-fam.file    <- "../data/panel/1kg_hgdp_train.fam"
+k           <- 1
+fam.file    <- "../data/panel/1kg_hgdp.fam"
 labels.file <- "../data/panel/1kg_hgdp.lab"
-admix.file  <- "../data/admixture/1kg_hgdp_train.7.Q"
-which.label <- "label2"
+admix.file  <- "../data/admixture/1kg_hgdp.11.Q"
+which.label <- "label1"
 int         <- c(0.05,0.95)
 
 # LOAD SAMPLE DATA FROM .fam FILE
@@ -31,16 +31,19 @@ admix           <- as.matrix(read.table(admix.file))
 rownames(admix) <- panel$iid
 colnames(admix) <- paste0("K",1:ncol(admix))
 
-# SUMMARIZE CONTRIBUTIONS FROM SELECTED ANCESTRAL POPULATION
-# ----------------------------------------------------------
-dev.new(height = 8,width = 5)
+# COMPILE ADMIXTURE SUMMARY STATISTICS
+# ------------------------------------
 admix.stats <-
   data.frame(n = as.vector(table(panel$label)),
              x = tapply(admix[,k],panel$label,mean),
              a = tapply(admix[,k],panel$label,function(x) quantile(x,int[1])),
              b = tapply(admix[,k],panel$label,function(x) quantile(x,int[2])))
+
+# SUMMARIZE CONTRIBUTIONS FROM SELECTED ANCESTRAL POPULATION
+# ----------------------------------------------------------
+dev.new(height = 9,width = 5)
 admix.stats <- admix.stats[order(admix.stats$x),]
-n           <- nrow(admix.stats)
+n           <- nlevels(panel$label)
 print(ggplot(cbind(admix.stats,y = 1:n),aes(x = x,y = y)) +
       geom_point(col = "dodgerblue",cex = 1.4) +
       geom_errorbarh(aes(xmin = a,xmax = b),col = "dodgerblue",height = 0) +
@@ -51,7 +54,7 @@ print(ggplot(cbind(admix.stats,y = 1:n),aes(x = x,y = y)) +
       theme(panel.grid.major  = element_blank(),
             panel.grid.minor  = element_blank(),
             axis.text.x       = element_text(size = 9),
-            axis.text.y       = element_text(size = 9),
+            axis.text.y       = element_text(size = 8),
             axis.title        = element_text(size = 10),
             plot.title        = element_text(size = 10)) +
       labs(title = paste("ancestral population k =",k),
