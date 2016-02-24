@@ -41,16 +41,17 @@ needed. Revisit this list later. -Peter*
 
 5. Download the files from this github repository. This can be
 accomplished in one of two ways. You can either download all the files
-in a single ZIP file by clicking the "Download ZIP" button. Or you can
+in a single ZIP file by clicking the **Download ZIP** button. Or you can
 "clone" the repository with git by running command <code>git clone
-<url></code>, where **<url>** is the "clone url" given next to the
-"SSH" or "HTTPS" button toward the top of the webpage.
+url</code>, where **url** is the "clone url" next to the
+**SSH** or **HTTPS** button toward the top of the github webpage.
 
 6. We use PLINK for some of the optional exercises. Download and
 install PLINK from [here](http://www.cog-genomics.org/plink2)).
 
-7. Optionally, download your genotype data from Ancestry and/or
-23andme. *Give more details about this step here.*
+7. Optionally, download genotype data from your
+[Ancestry](images/screenshot-of-ancestry-rawdata-download.png) and/or
+[23andme](images/screenshot-of-23andme-rawdata-download.png) accounts.
 
 ### A brief survey of the files in this repository 
 
