@@ -55,8 +55,16 @@ install PLINK from [here](http://www.cog-genomics.org/plink2)).
 
 ### A brief survey of the files in this repository 
 
-Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
-output.
+*Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
+output, etc.*
+
+### Exercise 1: Exploring global human variation using ADMIXTURE
+
+*Describe this exercise here.*
+
+### Exercise 2: Predicting ancestral admixture proportions from genotypes using a global variation reference panel
+
+*Describe this exercise here.*
 
 ### Some background on the genotype data
 
