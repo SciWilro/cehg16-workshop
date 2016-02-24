@@ -33,22 +33,26 @@ To get ready for the workshop, please do the following:
 
 3. Install the following R packages using function
 **install.packages**: lattice, latticeExtra, Hmisc, ggplot2,
-data.table, maps. *Note: some of these packages may not be needed.*
+data.table, maps. *Note: some of these packages may not be
+needed. Revisit this list later. -Peter*
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
 
 5. Download the files from this github repository. This can be
-accomplished in one of two ways: download all the files in a single
-ZIP file by clicking the "Download ZIP" button; or run command
-<code>git clone git@github.com:Ancestry/cehg16-workshop.git</code>.
+accomplished in one of two ways. You can either download all the files
+in a single ZIP file by clicking the "Download ZIP" button. Or you can
+"clone" the repository with git by running command <code>git clone
+<url></code>, where **<url>** is the "clone url" given next to the
+"SSH" or "HTTPS" button toward the top of the webpage.
 
 6. We use PLINK for some of the optional exercises. Download and
-install PLINK from ere](http://www.cog-genomics.org/plink2)).
+install PLINK from [here](http://www.cog-genomics.org/plink2)).
 
-7. Optionally, download genotypes from Ancestry and/or 23andme.
+7. Optionally, download your genotype data from Ancestry and/or
+23andme. *Give more details about this step here.*
 
-### Overview of files in repository 
+### A brief survey of the files in this repository 
 
 Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
 output.
