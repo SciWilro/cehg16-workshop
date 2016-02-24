@@ -24,12 +24,31 @@ this is helpful for working through the examples on site.
 
 ### Getting started
 
-Download ADMIXTURE 1.3.0.
+To get ready for the workshop, please do the following:
 
-Optionally, install git.
+1. Download ADMIXTURE 1.3.0
+([link](http://www.genetics.ucla.edu/software/admixture)).
 
-Install the following R packages: lattice, latticeExtra, Hmisc, ggplot2,
-data.table, maps.
+2. Download and install R ([link](http://cran.r-project.org)).
+
+3. Install the following R packages using function
+**install.packages**: lattice, latticeExtra, Hmisc, ggplot2,
+data.table, maps. *Note: some of these packages may not be needed.*
+
+4. Optionally, download and install git
+([link](http://git-scm.com/download)).
+
+5. Download the files from this github repository. This can be
+accomplished in one of two ways: download all the files in a single
+ZIP file by clicking the "Download ZIP" button; or run command
+<code>git clone git@github.com:Ancestry/cehg16-workshop.git</code>.
+
+6. We use PLINK for some of the optional exercises. Download and
+install PLINK from ere](http://www.cog-genomics.org/plink2)).
+
+7. Optionally, download genotypes from Ancestry and/or 23andme.
+
+### Overview of files in repository 
 
 Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
 output.
@@ -103,13 +122,13 @@ Supplementary Table 1 of the most recent *1000 Genomes* paper
 ### Contributors
 
 [Peter Carbonetto](www.cs.ubc.ca/spider/pcarbo) and
-[Amir Kermany](http://www.linkedin.com/in/akermany)
+[Amir Kermany](http://www.linkedin.com/in/akermany)<br>
 [AncestryDNA](http://dna.ancestry.com)<br>
 San Francisco, CA<br>
-February, 2016
+March, 2016
 
 All members of the AncestryDNA Science Team have contributed to this
 work in some way; in particular, Yong Wang did much of the initial
 legwork in compiling the HGDP and 1000 Genomes data, and sorting out
 potential issues with these data. Also, thanks Suyash Shringarpure and
-John Novembre for their input on the ADMIXTURE analysis.
+John Novembre for their input on some aspects of the ADMIXTURE analysis.
