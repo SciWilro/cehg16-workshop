@@ -66,18 +66,20 @@ admix.stats <- admix.stats[order(admix.stats$x),]
 # ----------------------------------------------------------
 # Visualize these summary statistics using the error bar plot in
 # ggplot2.
-dev.new(height = 9,width = 5)
+dev.new(height = 7,width = 4.5)
 print(ggplot(cbind(admix.stats,y = 1:n),aes(x = x,y = y)) +
       geom_point(col = "dodgerblue",cex = 1.4) +
       geom_errorbarh(aes(xmin = a,xmax = b),col = "dodgerblue",height = 0) +
       theme_minimal() +
       scale_x_continuous(limits = c(-0.025,1.025),breaks = c(0,0.5,1)) +
-      scale_y_continuous(breaks = 1:n,labels = rownames(admix.stats)) +
+      scale_y_continuous(breaks = 1:n,
+                         labels = paste(rownames(admix.stats),"-",
+                                        admix.stats$n)) +
       theme(panel.grid.major = element_blank(),
             panel.grid.minor = element_blank(),
             axis.text.x      = element_text(size = 9),
-            axis.text.y      = element_text(size = 8),
-            axis.title       = element_text(size = 10),
-            plot.title       = element_text(size = 10)) +
+            axis.text.y      = element_text(size = 7),
+            axis.title       = element_text(size = 9),
+            plot.title       = element_text(size = 9)) +
       labs(title = paste("ancestral population k =",k),
            x = "admixture proportion",y = ""))

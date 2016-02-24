@@ -53,6 +53,9 @@ install PLINK from [here](http://www.cog-genomics.org/plink2)).
 [Ancestry](images/screenshot-of-ancestry-rawdata-download.png) and/or
 [23andme](images/screenshot-of-23andme-rawdata-download.png) accounts.
 
+8. *Add step here for downloading large data files from shared Dropbox
+   link, or from flash drive passed around room.*
+
 ### A brief survey of the files in this repository 
 
 *Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
@@ -60,7 +63,37 @@ output, etc.*
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
-*Describe this exercise here.*
+Aim of this exercise is to use R to visualize and interpret results of
+running ADMIXTURE on a collection of genotypes.
+
+Give brief overview of ADMIXTURE: what it does, how to use it. It is a
+very simple model, but fitting the model parameters to the data is a
+very challenging computational problem. 
+
+Note that although specialized software has been developed for this
+purpose (DISTRUCT), it isn't very flexible, and it is relatively
+straightforward to use R to develop our own visual summary of
+ADMIXTURE results.
+
+Steps in this exercise:
+
+- Explain what are the files in the data/admixture directory. Give
+  commands used to generate the allele frequencies and admixture
+  estimates. You could reproduce these results yourself, but not
+  within the span of this workshop since running ADMIXTURE on these
+  data sets took as long as 6 hours on a multicore machine with 25
+  CPUs.
+
+- Explain the group labels file (1kg_hgdp.lab).
+
+- Explore admixture results using R script
+  plot.admixture.by.pop.R. Questions: What historical or demographic
+  interpretation would you assign to these individual ancestral
+  populations based on the correspondence between the admixture
+  statistics and the group labels? Are there any ancestral populations
+  that are difficult to interpret? Are there any groups that do not
+  fit your intrpretation? Optional: explore ADMIXTURE results with
+  K=11 ancestral populations.
 
 ### Exercise 2: Predicting ancestral admixture proportions from genotypes using a global variation reference panel
 
