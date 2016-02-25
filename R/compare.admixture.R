@@ -9,13 +9,13 @@ fam.file2   <- "../data/panel/1kg_hgdp_test.fam"
 admix.file1 <- "../data/admixture/1kg_hgdp.7.Q"
 admix.file2 <- "test1.admix"
 
-# Shapes used to plot some of the results.
-clrs   <- c("darkorange","dodgerblue","forestgreen","red","navyblue","gold",
-             "yellowgreen","black","darkviolet","magenta","tomato")
-shapes <- c(20,1,2,4)
+# These are the shapes and colours used to plot the results.
+clrs <- rep(c("darkorange","dodgerblue","forestgreen","red","navyblue","gold",
+              "yellowgreen","black","darkviolet","magenta","cyan"),each = 4)
+shapes <- rep(c(20,1,2,4),times = 11)
 
-# LOAD SAMPLE DATA FROM .fam FILE
-# -------------------------------
+# LOAD SAMPLE DATA FROM .fam FILES
+# --------------------------------
 cat("Loading sample info from PLINK .fam files.\n")
 panel1           <- read.table(fam.file1,stringsAsFactors = FALSE)
 panel2           <- read.table(fam.file2,stringsAsFactors = FALSE)
@@ -26,8 +26,6 @@ rownames(panel2) <- panel2$iid
   
 # LOAD ADMIXTURE ESTIMATES
 # ------------------------
-# Load the n x k admixture proportions matrix, where n is the number
-# of samples and k is the number of ancestral populations.
 cat("Loading admixture estimates.\n")
 admix1           <- as.matrix(read.table(admix.file1))
 admix2           <- as.matrix(read.table(admix.file2))
@@ -57,6 +55,12 @@ rm(labels)
 
 # SUMMARIZE DIFFERENCES IN ADMIXTURE PROPORTIONS
 # ----------------------------------------------
+# To summarize the differences in the admixture estimates, rather than
+# look at all admixture proportions, I only show the admixture
+# proportion for the ancestral population that shows the largest
+# difference between the two estimates. Therefore, this plot gives a
+# summary of the maximum admixture differences.
+cat("Generating summary of differences in admixture estimates.\n")
 dev.new(height = 5,width = 7.75)
 i <- apply(abs(admix1 - admix2),1,function (x) which.max(x))
 print(ggplot(data.frame(x     = admix1[cbind(1:n,i)],
@@ -64,10 +68,10 @@ print(ggplot(data.frame(x     = admix1[cbind(1:n,i)],
                         label = panel$label),
              aes(x,y,col = label,shape = label)) +
       geom_abline(intercept = 0,slope = 1,size = 0.5,color = "gray",
-                  linetype = 2) +
+                  linetype = "dashed") +
       geom_point() + theme_minimal() +
-      scale_color_manual(values = rep(clrs,each = length(shapes))) +
-      scale_shape_manual(values = rep(shapes,times = length(clrs))) +
+      scale_color_manual(values = clrs) +
+      scale_shape_manual(values = shapes) +
       theme(panel.grid.major  = element_blank(),
             panel.grid.minor  = element_blank(),
             plot.title        = element_text(size = 9),
