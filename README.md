@@ -38,9 +38,7 @@ software on your computer for generating graphics (see
 instructions specific to Mac OS X).
 
 3. Install the following R packages using function
-**install.packages**: lattice, latticeExtra, Hmisc, ggplot2,
-data.table, maps. *Note: some of these packages may not be
-needed. Revisit this list later. -Peter*
+**install.packages**: lattice, latticeExtra, Hmisc, ggplot2.
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
@@ -53,7 +51,7 @@ url</code>, where **url** is the "clone url" next to the
 **SSH** or **HTTPS** button toward the top of the github webpage.
 
 6. We use PLINK for some of the optional exercises. Download and
-install PLINK from [here](http://www.cog-genomics.org/plink2)).
+install PLINK from [here](http://www.cog-genomics.org/plink2).
 
 7. Optionally, download genotype data from your
 [Ancestry](images/screenshot-of-ancestry-rawdata-download.png) and/or
@@ -69,10 +67,41 @@ output, etc.*
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
-First aim of this exercise is to use R to visualize and interpret
-results of running ADMIXTURE on a collection of genotypes. Second aim
-is to get familiarized with some powerful R toolkits for visualizing
-data.
+The primary aim of this exercise is to visualize and interpret the
+results of running ADMIXTURE on a collection of genotypes. Here we
+will use R entirely for this aim. A secondary objective is to learn
+about some powerful R tools for visualizing data.
+
+[ADMIXTURE](http://dx.doi.org/10.1101/gr.094052.109) is a method for
+discovering latent structure from a collection of genotype
+samples. Unlike principal component analysis (PCA), another widely
+used statistical technique for analyzing genetic data, ADMIXTURE is
+model-based; that is, it proposes a (very simple) model, then adjusts
+the model parameters to best fit the data. Although the ADMIXTURE
+model is very simple and therefore cannot capture the complexities of
+natural populations, an important advantage is the ADMIXTURE results
+have a more straightforward interpretation. By contrast, PCA is more
+flexible statistical that can capture a wide range of population
+structure, but this flexibility comes at the cost of making the
+interpretation more challenging, and increases the potential for
+misinterpretation.
+
+In this exercise, we will investigate the results of running ADMIXTURE
+on a set of 2,756 genotype samples that were collected with the intent
+of learning about global genetic diversity. In particular, we will use
+R to visualize the parameters of the ADMIXTURE model that were fit to
+these data. Note that while specialized software (e.g.,
+[DISTRUCT](http://web.stanford.edu/group/rosenberglab/index.html))
+has been developed for the specific purpose of visualizing population
+structure in a data set, we will see that only a few lines of R code
+are necessary to develop effective visualizations of these data.
+
+Although the ADMIXTURE model is very simple, fitting the model
+parameters to these data is a challenging computational problem, and
+cannot be completed during this workshop. We found that optimizing the
+model parameters took as long as 6 hours on a multicore machine with
+25 CPUs. Therefore, we have included pre-computed ADMIXTURE results in
+the [data/admixture] directory.
 
 Give brief overview of ADMIXTURE: what it does, how to use it. It is a
 very simple model, but fitting the model parameters to the data is a
@@ -87,10 +116,7 @@ Steps in this exercise:
 
 - Explain what are the files in the data/admixture directory. Give
   commands used to generate the allele frequencies and admixture
-  estimates. You could reproduce these results yourself, but not
-  within the span of this workshop since running ADMIXTURE on these
-  data sets took as long as 6 hours on a multicore machine with 25
-  CPUs.
+  estimates. 
 
 - Explain the group labels file (1kg_hgdp.lab).
 
