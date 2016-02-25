@@ -29,7 +29,13 @@ To get ready for the workshop, please do the following:
 1. Download ADMIXTURE 1.3.0
 ([link](http://www.genetics.ucla.edu/software/admixture)).
 
-2. Download and install R ([link](http://cran.r-project.org)).
+2. Download and install R ([link](http://cran.r-project.org)). Verify
+that you can create graphics in R by entering command
+<code>plot(1,1)</code> in the R console. If this command does not
+generate a figure, you will need to download and install the necessary
+software on your computer for generating graphics (see
+[here](http://cran.r-project.org/bin/macosx/RMacOSX-FAQ.html) for
+instructions specific to Mac OS X).
 
 3. Install the following R packages using function
 **install.packages**: lattice, latticeExtra, Hmisc, ggplot2,
@@ -63,8 +69,10 @@ output, etc.*
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
-Aim of this exercise is to use R to visualize and interpret results of
-running ADMIXTURE on a collection of genotypes.
+First aim of this exercise is to use R to visualize and interpret
+results of running ADMIXTURE on a collection of genotypes. Second aim
+is to get familiarized with some powerful R toolkits for visualizing
+data.
 
 Give brief overview of ADMIXTURE: what it does, how to use it. It is a
 very simple model, but fitting the model parameters to the data is a
@@ -86,14 +94,19 @@ Steps in this exercise:
 
 - Explain the group labels file (1kg_hgdp.lab).
 
-- Explore admixture results using R script
-  plot.admixture.by.pop.R. Questions: What historical or demographic
+- Give a brief overview of the R scripts that will be used in this
+  exercise.
+
+- Explore admixture results using R scripts plot.admixture.by.pop.R
+  and plot.admixture.by.group.R. Try uncommenting lines of code at
+  each of plot.admixture.by.group.R to transform box plot to a
+  box-percentile plot. Questions: What historical or demographic
   interpretation would you assign to these individual ancestral
   populations based on the correspondence between the admixture
   statistics and the group labels? Are there any ancestral populations
-  that are difficult to interpret? Are there any groups that do not
-  fit your intrpretation? Optional: explore ADMIXTURE results with
-  K=11 ancestral populations.
+  that are difficult to interpret? Are there any groups or sample that
+  do not closely fit your interpretation? Optional: explore ADMIXTURE
+  results with K=11 ancestral populations.
 
 ### Exercise 2: Predicting ancestral admixture proportions from genotypes using a global variation reference panel
 
