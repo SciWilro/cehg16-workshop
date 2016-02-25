@@ -76,41 +76,43 @@ about some powerful R tools for visualizing data.
 discovering latent structure from a collection of genotype
 samples. Unlike principal component analysis (PCA), another widely
 used statistical technique for analyzing genetic data, ADMIXTURE is
-model-based; that is, it proposes a (very simple) model, then adjusts
-the model parameters to best fit the data. Although the ADMIXTURE
-model is very simple and therefore cannot capture the complexities of
-natural populations, an important advantage is the ADMIXTURE results
-have a more straightforward interpretation. By contrast, PCA is more
-flexible statistical that can capture a wide range of population
-structure, but this flexibility comes at the cost of making the
-interpretation more challenging, and increases the potential for
-misinterpretation.
+based on a model; that is, it proposes a (very simple) model, then
+adjusts the model parameters to best fit the data. Although the
+ADMIXTURE model is simple and therefore cannot capture many
+complexities of natural populations, an important advantage is the
+ADMIXTURE results have a more straightforward interpretation. By
+contrast, PCA provides more flexible statistical analysis that can
+capture a wide range of population structure, but this flexibility
+comes at the cost of making the interpretation more challenging, and
+therefore [increases the potential for misinterpretation](http://dx.doi.org/10.1038/ng.139).
 
 In this exercise, we will investigate the results of running ADMIXTURE
 on a set of 2,756 genotype samples that were collected with the intent
-of learning about global genetic diversity. In particular, we will use
-R to visualize the parameters of the ADMIXTURE model that were fit to
-these data. Note that while specialized software (e.g.,
+of learning about global human genetic diversity. In particular, we
+will use R to visualize the parameters of the ADMIXTURE model that
+were fit to these data. Note that while specialized software toolkits
+(e.g.,
 [DISTRUCT](http://web.stanford.edu/group/rosenberglab/index.html))
-has been developed for the specific purpose of visualizing population
-structure in a data set, we will see that only a few lines of R code
-are necessary to develop effective visualizations of these data.
+have been developed for the specific purpose of visualizing population
+structure, we will see that only a few lines of R code are necessary
+to develop effective visualizations of these data.
 
-Although the ADMIXTURE model is very simple, fitting the model
-parameters to these data is a challenging computational problem, and
-cannot be completed during this workshop. We found that optimizing the
-model parameters took as long as 6 hours on a multicore machine with
-25 CPUs. Therefore, we have included pre-computed ADMIXTURE results in
-the [data/admixture] directory.
+Unfortunately, despite the fact that the ADMIXTURE model is simple,
+fitting the model parameters to these data is a challenging
+computational problem. We found that optimizing the model parameters
+took as long as 6 hours on a multicore machine with 25
+CPUs. Therefore, we have included pre-computed ADMIXTURE results in
+the [data/admixture](data/admixture) directory. (This is the command
+we used to generate our results in case you would like to reproduce
+them: <code>admixture --seed=1 1kg_hgdp.bed K</code>, where K is 7
+or 11.) The files with a .Q extension contain the estimated admixture
+proportions; each row of the text file corresponds to a sample, and
+each column corresponds to an ancestral population. The files with the
+.out extension store the console output from running ADMIXTURE. We ran
+ADMIXTURE with K=7 and K=11 ancestral populations in order to capture
+population structure at two different resolutions.
 
-Give brief overview of ADMIXTURE: what it does, how to use it. It is a
-very simple model, but fitting the model parameters to the data is a
-very challenging computational problem. 
 
-Note that although specialized software has been developed for this
-purpose (DISTRUCT), it isn't very flexible, and it is relatively
-straightforward to use R to develop our own visual summary of
-ADMIXTURE results.
 
 Steps in this exercise:
 
