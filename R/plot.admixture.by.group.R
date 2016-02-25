@@ -1,5 +1,17 @@
-# TO DO: Explain here what this script does, and how to use it. Note
-# that this script introduces the idea of the box-percentile plot.
+# This R script summarizes the distribution of admixture proportions
+# across a collection of samples selected by their group or region
+# label.  This script is useful for looking closely at the genetic
+# composition of a collection of genotypes that are believed to have
+# similar ancestral origins.
+#
+# To run this script in R, you need to specify several script
+# parameters:
+#
+#   groups       Select all samples that are assigned these labels.
+#   fam.file     PLINK .fam file giving sample info.
+#   labels.file  Text file containing group/region labels for samples.
+#   admix.file   ADMIXTURE output giving estimated admixture proportions.
+#
 library(lattice)
 library(Hmisc)
 
@@ -37,8 +49,7 @@ colnames(admix) <- paste0("K",1:K)
 
 # SUMMARIZE ADMIXTURE PROPORTIONS AMONG SELECTED SAMPLES
 # ------------------------------------------------------
-# Compile and visualize admixture proportions for all samples in the
-# selected groups.
+# Compile and visualize admixture proportions for the selected samples.
 cat("Summarizing admixture among selected samples.\n")
 trellis.device(height = 4,width = 4)
 trellis.par.set(par.main.text = list(cex = 0.75,font = 1),
