@@ -57,13 +57,11 @@ install PLINK from [here](http://www.cog-genomics.org/plink2).
 [Ancestry](images/screenshot-of-ancestry-rawdata-download.png) and/or
 [23andme](images/screenshot-of-23andme-rawdata-download.png) accounts.
 
-8. *Add step here for downloading large data files from shared Dropbox
-   link, or from flash drive passed around room.*
-
-### A brief survey of the files in this repository 
-
-*Give survey of data files: 1000 Genomes, HGDP, PLINK format, ADMIXTURE
-output, etc.*
+8. Finally, there are a few other data files that are too large to be
+included in this repository, so they will have to be downloaded
+separately. Download these files from the URL that will be given to
+you during the workshop. Alternatively, copy the files from one of the
+USB flash drives that are being circulated throughout the room.
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
@@ -109,16 +107,20 @@ or 11.) The files with a .Q extension contain the estimated admixture
 proportions; each row of the text file corresponds to a sample, and
 each column corresponds to an ancestral population. The files with the
 .out extension store the console output from running ADMIXTURE. We ran
-ADMIXTURE with K=7 and K=11 ancestral populations in order to capture
+ADMIXTURE with K = 7 and K = 11 ancestral populations in order to capture
 population structure at two different resolutions.
 
-
+We have developed two R scripts for this exercise:
+[plot.admixture.by.group.R](R/plot.admixture.by.group.R) and
+[plot.admixture.by.pop.R](R/plot.admixture.by.pop.R). The first script
+summarizes the distribution of admixture proportions across a data set
+for a single ancestral population, and the second script summarizes
+the distribution of admixture proportions across a collection of
+samples assigned the same label(s). See the comments at the top of
+each of these files for detailed instructions on how to use these
+scripts.
 
 Steps in this exercise:
-
-- Explain what are the files in the data/admixture directory. Give
-  commands used to generate the allele frequencies and admixture
-  estimates. 
 
 - Explain the group labels file (1kg_hgdp.lab).
 

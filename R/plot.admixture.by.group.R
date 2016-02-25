@@ -1,6 +1,6 @@
 # This R script summarizes the distribution of admixture proportions
 # across a collection of samples selected by their group or region
-# label.  This script is useful for looking closely at the genetic
+# label. This script is useful for looking closely at the genetic
 # composition of a collection of genotypes that are believed to have
 # similar ancestral origins.
 #
@@ -11,6 +11,11 @@
 #   fam.file     PLINK .fam file giving sample info.
 #   labels.file  Text file containing group/region labels for samples.
 #   admix.file   ADMIXTURE output giving estimated admixture proportions.
+#
+# By default, this script generates box-and-whisker plots. To create
+# box-percentile plots instead, which can sometimes be more
+# informative, or even more visually appealing, uncomment the lines of
+# code toward the bottom of this script, as indicated below.
 #
 library(lattice)
 library(Hmisc)
