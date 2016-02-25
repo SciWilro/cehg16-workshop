@@ -61,28 +61,30 @@ install PLINK from [here](http://www.cog-genomics.org/plink2).
 included in this repository, so they will have to be downloaded
 separately. Download these files from the URL that will be given to
 you during the workshop. Alternatively, copy the files from one of the
-USB flash drives that are being circulated throughout the room.
+USB flash drives that will be circulated during the workshop.
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
-The primary aim of this exercise is to visualize and interpret the
-results of running ADMIXTURE on a collection of genotypes. Here we
-will use R entirely for this aim. A secondary objective is to learn
-about some powerful R tools for visualizing data.
+The primary aim of this exercise is to learn how to visualize and
+interpret the results of running ADMIXTURE on a collection of
+genotypes. Here we will use R entirely for this aim. A secondary
+objective is to learn about some flexible R packages---lattice and
+ggplot---for visualizing data.
 
 [ADMIXTURE](http://dx.doi.org/10.1101/gr.094052.109) is a method for
 discovering latent structure from a collection of genotype
 samples. Unlike principal component analysis (PCA), another widely
 used statistical technique for analyzing genetic data, ADMIXTURE is
-based on a model; that is, it proposes a (very simple) model, then
-adjusts the model parameters to best fit the data. Although the
-ADMIXTURE model is simple and therefore cannot capture many
-complexities of natural populations, an important advantage is the
-ADMIXTURE results have a more straightforward interpretation. By
-contrast, PCA provides more flexible statistical analysis that can
-capture a wide range of population structure, but this flexibility
-comes at the cost of making the interpretation more challenging, and
-therefore [increases the potential for misinterpretation](http://dx.doi.org/10.1038/ng.139).
+based on a model; that is, it proposes a (very simple) model of
+genetic transmission, then adjusts the model parameters to best fit
+the data. Although the ADMIXTURE model is simple and therefore cannot
+capture many complexities of natural populations, an important
+advantage is ADMIXTURE results are easier to interpret. By contrast,
+PCA provides more flexible statistical analysis that can capture a
+wide range of population structure, but this flexibility comes at the
+cost of making the interpretation more challenging, and therefore
+[increases the potential for
+misinterpretation](http://dx.doi.org/10.1038/ng.139).
 
 In this exercise, we will investigate the results of running ADMIXTURE
 on a set of 2,756 genotype samples that were collected with the intent
@@ -92,17 +94,31 @@ were fit to these data. Note that while specialized software toolkits
 (e.g.,
 [DISTRUCT](http://web.stanford.edu/group/rosenberglab/index.html))
 have been developed for the specific purpose of visualizing population
-structure, we will see that only a few lines of R code are necessary
-to develop effective visualizations of these data.
+structure from programs such as STRUCTURE and ADMIXTURE, we will see
+that only a few lines of R code are necessary to develop effective
+visualizations of these data.
 
-*Explain here the ADMIXTURE output; that is, the .Q and .P files.*
+In the standard invocation, ADMIXTURE outputs two files: a text file
+that ends with .P, and another that ends with .Q. The first text file
+gives the allele frequency estimates for each population. These allele
+frequency estimates are represented as a p x K matrix, where p is the
+number of genetic variants (SNPs), and K is the number of ancestral
+populations. (See the figure below.)
+
+The second text file gives the estimated admixture proportions for
+each sample. The admixture estimates are represented as an n x K
+matrix, where n is the number of samples, and K is the number of
+ancestral populations. The numbers in each line, or row of the matrix,
+should add up to 1.
+
+![ADMIXTURE output](/images/admixture-output.gif)
 
 Unfortunately, despite the fact that the ADMIXTURE model is simple,
 fitting the model parameters to these data is a challenging
 computational problem. We found that optimizing the model parameters
 took as long as 6 hours on a multicore machine with 25
 CPUs. Therefore, we have included pre-computed ADMIXTURE results in
-the [data/admixture](data/admixture) directory. (This is the command
+the [data/admixture](/data/admixture) directory. (This is the command
 we used to generate our results in case you would like to reproduce
 them: <code>admixture --seed=1 1kg_hgdp.bed K</code>, where K is 7
 or 11.) The files with a .Q extension contain the estimated admixture
@@ -113,8 +129,8 @@ ADMIXTURE with K = 7 and K = 11 ancestral populations in order to capture
 population structure at two different resolutions.
 
 We have developed two R scripts for this exercise:
-[plot.admixture.by.pop.R](R/plot.admixture.by.pop.R) and
-[plot.admixture.by.group.R](R/plot.admixture.by.group.R). The first
+[plot.admixture.by.pop.R](/R/plot.admixture.by.pop.R) and
+[plot.admixture.by.group.R](/R/plot.admixture.by.group.R). The first
 script summarizes the distribution of admixture proportions across a
 data set for a single ancestral population. The second script
 summarizes the distribution of admixture proportions across a
@@ -123,7 +139,7 @@ the top of each of these files for detailed instructions on how to use
 these scripts. Each of these scripts use the group or region labels
 assigned to each sample to relate the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
-labels are stored in [1kg_hgdp.lab](data/panel/1kg_hgdp.lab).
+labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
 #### Questions
 
