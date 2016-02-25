@@ -1,3 +1,5 @@
+![Example of plotting ADMIXTURE results](/images/admixture-demo.gif)
+
 AncestryDNA Workshop: Genomics at Scale
 =======================================
 Computational, Evolutionary and Human Genomics
@@ -108,8 +110,8 @@ populations. (See the figure below.)
 The second text file gives the estimated admixture proportions for
 each sample. The admixture estimates are represented as an n x K
 matrix, where n is the number of samples, and K is the number of
-ancestral populations. The numbers in each line, or row of the matrix,
-should add up to 1.
+ancestral populations. The numbers in each line (or, equivalently, row
+of the matrix) should add up to 1.
 
 ![ADMIXTURE output](/images/admixture-output.gif)
 
