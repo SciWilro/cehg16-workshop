@@ -95,6 +95,8 @@ have been developed for the specific purpose of visualizing population
 structure, we will see that only a few lines of R code are necessary
 to develop effective visualizations of these data.
 
+*Explain here the ADMIXTURE output; that is, the .Q and .P files.*
+
 Unfortunately, despite the fact that the ADMIXTURE model is simple,
 fitting the model parameters to these data is a challenging
 computational problem. We found that optimizing the model parameters
@@ -121,7 +123,7 @@ the top of each of these files for detailed instructions on how to use
 these scripts. Each of these scripts use the group or region labels
 assigned to each sample to relate the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
-labels are stored in [data/panel/1kg_hgdp.lab](1kg_hgdp.lab).
+labels are stored in [1kg_hgdp.lab](data/panel/1kg_hgdp.lab).
 
 #### Questions
 
@@ -135,18 +137,51 @@ labels are stored in [data/panel/1kg_hgdp.lab](1kg_hgdp.lab).
   not align well with your prior knowledge of human history or
   demography?
 
-- Optional: Explore ADMIXTURE results with K=11 ancestral populations.
+- *Optional:* Explore ADMIXTURE results with K=11 ancestral populations.
 
-- Optional: Can you suggest ways of improving these visualizations of
-  the admixture proportions?
+- *Optional:* Can you suggest ways of improving these visualizations
+  of the admixture proportions?
 
 ### Exercise 2: Predicting ancestral admixture proportions from genotypes using a global variation reference panel
 
-*Describe this exercise here.*
+*Items to include in this exercise:*
+
+- Brief survey of PLINK files and formats. 
+
+- Run admixture with -P option to estimate ancestral admixture
+  proportions in a set of samples given previously estimated allele
+  frequencies.
+
+- Predict admixture proportions in test samples using the allele
+  frequencies estimated from the full panel, and from the set with 100
+  fewer samples (**lkg_hgdp_train**).
+
+- Note that we have observed some differences in smaller admixture
+  proportions (typically less than 1%) when using the -P option.
+  Suyash (who helped develop this option) is investigating this.
+
+- Also give instructions here for adding your AncestryDNA or 23andme
+  genotypes to the test set.
+
+#### Questions
+
+- Start by comparing admixture estimates in test samples obtained by
+  running ADMIXTURE on all data, and by using -P option on test
+  samples only. Use the earlier R scripts to summarize the results in
+  the test samples, and use R script <blah> to compare the admixture
+  results. Do you get different results for some samples?
+
+- Predict admixture using the allele frequencies estimates from the
+  full panel **1kg_hgdp** n samples, and using the slightly smaller
+  panel **1kg_hgdp_train** with n samples. Do you get different
+  results for some samples? If so, why?
+
+- *Optional:* Run **admixture -P** with different seeds. Do you get a
+  different result when you run it with different seeds?
 
 ### Exit slip
 
-
+*Add exit slip here.*
 
 ### Some background on the genotype data
 
