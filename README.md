@@ -65,7 +65,7 @@ separately. Download these files from the URL that will be given to
 you during the workshop. Alternatively, copy the files from one of the
 USB flash drives that will be circulated during the workshop.
 
-*Note:* We are assuming in these exercises that you are using a
+**Note:** We are assuming in these exercises that you are using a
 UNIX-based command line, such as Linux, or Terminal in Mac OS X. It is
 possible to complete these exercises in Windows, but the exact steps
 will be slightly different.
@@ -178,9 +178,12 @@ generated from the combined HGDP + 1000 Genomes genotype panel to make
 admixture predictions for new genotype samples. We will see that once
 the hard work of fitting the ADMIXTURE model has already been
 accomplished, estimating admixture proportions for new samples is very
-fast. Here we will continue to work with the HGDP and 1000 Genomes
-data, but optionally you may also apply this analysis to your own
-genotypes (e.g., downloaded from your Ancestry or 23andme account).
+fast. This illustrates how we can leverage large genetic data sets to
+quickly estimate admixture proportions for any number of new
+individuals (e.g., AncestryDNA customers). Here we will continue to
+work with the HGDP and 1000 Genomes data, but optionally you may also
+apply this analysis to your own genotypes (e.g., downloaded from your
+Ancestry or 23andme account).
 
 #### PLINK files
 
@@ -229,7 +232,7 @@ several minutes on your laptop. The allele frequency files
 <code>1kg_hgdp.7.P</code> and <code>1kg_hgdp.11.P</code> were shared
 with you separately since they are quite large.
 
-#### Testing ADMIXTURE on your genotypes
+#### Testing ADMIXTURE with your own genotypes
 
 If you have taken the Ancestry or 23andme DNA test, and you are
 especially motivated, you can also include your genotypes in the test
@@ -258,43 +261,40 @@ Next, merge these genotypes with the other test samples, and create a
 	plink2 --file mytest --make-bed --out mytest
 
 Now you are ready to run ADMIXTURE on this test set augmented with
-your genotypes.
+your genotypes. You may find script
+[plot.myadmixture.R](/R/plot.myadmixture.R) useful for visualizing
+your results.
 	 
-*Items to include in this exercise:*
-
 - Predict admixture proportions in test samples using the allele
   frequencies estimated from the full panel, and from the data set
-  with 100 fewer samples (lkg_hgdp_train).
-
-- Note that we have observed some differences in smaller admixture
-  proportions (typically less than 1%) when using the -P option.
-  Suyash (who helped develop this option) is investigating this.
-
-- Optional: estimate admixture proportions from your own
-  genotypes. give instructions here for adding your AncestryDNA or
-  23andme genotypes to the test set. 
+  with 100 fewer samples (1kg_hgdp_train).
 
 #### Questions
 
-- Compare admixture estimates in the test samples with the admixture
-  estimates obtained by. Use R scripts 
+- Compare the admixture estimates you generated for the test samples
+  against the admixture estimates
+  [1kg_hgdp.7.Q](/data/admixture/1kg_hgdp.7.Q) obtained by running
+  ADMIXTURE on the full reference panel. Use R scripts
+  [plot.admixture.by.group.R](/R/plot.admixture.by.group.R),
+  [plot.admixture.by.pop.R](/R/plot.admixture.by.pop.R) and
+  [compare.admixture.R](/R/compare.admixture.R) for this. How
+  different are the admixture estimates overall? Do you get different
+  results for some groups or individual samples?
 
-- Start by comparing admixture estimates in test samples obtained by
-  running ADMIXTURE on all data, and by using -P option on test
-  samples only. Use the earlier R scripts to summarize the results in
-  the test samples, and use R script <blah> to compare the admixture
-  results. Do you get different results for some samples?
+- Repeat the same steps as before, but this time use the allele
+  frequency file <code>1kg_hgdp_train.7.P</code> generated from the
+  slightly smaller reference panel that does not contain any of the
+  samples included in the test set. This represents the more realistic
+  scenario in which we are attempting to predict admixture proportions
+  for genotypes that are not included in the refrence panel. Use the R
+  scripts to compare the two different admixture results for the test
+  samples. How different are the two sets of admixture estimates? Are
+  some estimates more different for certain samples or groups? Do you
+  notice any overall trends in these differences? 
 
-- Predict admixture using the allele frequencies estimates from the
-  full panel *1kg_hgdp* n samples, and using the slightly smaller
-  panel *1kg_hgdp_train* with n samples. Do you get different
-  results for some samples? If so, why?
-
-- *Optional:* Run with K=11.
+- *Optional:* Re-investigate these questions with K = 11 ancestral
+   populations.
   
-- *Optional:* Run **admixture -P** with different seeds. Do you get a
-  different result when you run it with different seeds?
-
 ### Exit slip
 
 *Add exit slip here.*
