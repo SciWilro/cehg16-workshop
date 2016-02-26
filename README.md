@@ -40,7 +40,7 @@ software on your computer for generating graphics (see
 instructions specific to Mac OS X).
 
 3. Install the following R packages using function
-install.packages: lattice, latticeExtra, Hmisc, ggplot2.
+<code>install.packages</code>: lattice, latticeExtra, Hmisc, ggplot2.
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
@@ -49,7 +49,7 @@ install.packages: lattice, latticeExtra, Hmisc, ggplot2.
 accomplished in one of two ways. You can either download all the files
 in a single ZIP file by clicking the "Download ZIP" button. Or you can
 "clone" the repository with git by running command <code>git clone
-url</code>, where url is the "clone url" next to the
+url</code>, where <code>url</code> is the "clone url" next to the
 "SSH" or "HTTPS" button toward the top of the github webpage.
 
 6. We use PLINK for some of the optional exercises. Download and
@@ -64,6 +64,11 @@ included in this repository, so they will have to be downloaded
 separately. Download these files from the URL that will be given to
 you during the workshop. Alternatively, copy the files from one of the
 USB flash drives that will be circulated during the workshop.
+
+*Note:* We are assuming in these exercises that you are using a
+UNIX-based command line, such as Linux, or Terminal in Mac OS X. It is
+possible to complete these exercises in Windows, but the exact steps
+will be slightly different.
 
 ### Exercise 1: Exploring global human variation using ADMIXTURE
 
@@ -176,7 +181,7 @@ genotypes (e.g., downloaded from your Ancestry or 23andme account).
 Here we will work with PLINK data files. These files have been shared
 with you separately because they are too large to store in the public
 github repository. First, take a look at files
-<tt>1kg_hgdp_test.map</tt> and <tt>1kg_hgdp_test.ped</tt>. The
+<code>1kg_hgdp_test.map</code> and <code>1kg_hgdp_test.ped</code>. The
 first file gives us information about the 162,645 SNPs; each line
 gives, from left to right, the chromosome, SNP database identifier,
 genetic distance (which isn't used here, so it is set to 0), and the
@@ -199,14 +204,28 @@ Genomes panel with 2,756 genotype samples, and this panel split into a
 respectively. Once you have genotypes stored in this format, you can
 analyze these genotypes using ADMIXTURE.
 
-     mv 1kg_hgdp.7.P 1kg_hgdp_test.7.P.in
-     admixture -P 1kg_hgdp_test.bed 7
+Now that we have explored the genotype data files in PLINK format, we
+are ready to estimate ancestral admixture from previously computed
+population allele frequencies. For example, to estimate admixture
+proportions in the test samples for 7 ancestral populations using the
+allele frequencies estimated from the full panel, run the following
+commands (here we've assumed you have a multicore computer with 4
+CPUs):
+
+     cp 1kg_hgdp.7.P 1kg_hgdp_test.7.P.in
+     admixture -j4 -P 1kg_hgdp_test.bed 7
+
+Although the model fitting, as we mentioned previously, is very
+computationally intensive, this step should complete in the order of
+several minutes on your laptop. The allele frequency file
+<code>1kg_hgdp.7.P</code>, along with other allele frequency files,
+was shared with you separately since the file is quite large.
+
+If you have taken the Ancestry or 23andme DNA test, and you are
+especially motivated, you can also include your genotypes in the test
+set.
 
 *Items to include in this exercise:*
-
-- Run admixture with -P option to estimate ancestral admixture
-  proportions in a set of samples given previously estimated allele
-  frequencies.
 
 - Predict admixture proportions in test samples using the allele
   frequencies estimated from the full panel, and from the data set
