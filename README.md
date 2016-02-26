@@ -176,7 +176,7 @@ genotypes (e.g., downloaded from your Ancestry or 23andme account).
 Here we will work with PLINK data files. These files have been shared
 with you separately because they are too large to store in the public
 github repository. First, take a look at files
-<pre>1kg_hgdp_test.map</pre> and <pre>1kg_hgdp_test.ped</pre>. The
+<tt>1kg_hgdp_test.map</tt> and <tt>1kg_hgdp_test.ped</tt>. The
 first file gives us information about the 162,645 SNPs; each line
 gives, from left to right, the chromosome, SNP database identifier,
 genetic distance (which isn't used here, so it is set to 0), and the
