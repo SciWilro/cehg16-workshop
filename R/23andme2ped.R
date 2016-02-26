@@ -22,10 +22,10 @@
 # geno.file, which contains the genotypes in a file downloaded from
 # 23andme.com; (2) bim.file, the list of SNPs to keep (set to NULL to
 # retain all the genotype data).
-out.prefix <- "peter_carbonetto_23andme"
-geno.file  <- "peter_carbonetto_23andme.txt"
+out.prefix <- "nick_carraway_23andme"
+geno.file  <- "nick_carraway_23andme.txt"
 bim.file   <- "../data/panel/1kg_hgdp.bim"
-iid        <- "pc3"
+iid        <- "nc3"
 fid        <- 0
 
 # READ GENOTYPE DATA

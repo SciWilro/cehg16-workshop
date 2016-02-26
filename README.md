@@ -207,24 +207,49 @@ analyze these genotypes using ADMIXTURE.
 Now that we have explored the genotype data files in PLINK format, we
 are ready to estimate ancestral admixture from previously computed
 population allele frequencies. For example, to estimate admixture
-proportions in the test samples for 7 ancestral populations using the
-allele frequencies estimated from the full panel, run the following
-commands (here we've assumed you have a multicore computer with 4
-CPUs):
+proportions in the 100 test samples for 7 ancestral populations using
+the allele frequencies estimated from the full panel, run the
+following commands (here we are assuming you have a multicore computer
+with 4 CPUs):
 
      cp 1kg_hgdp.7.P 1kg_hgdp_test.7.P.in
      admixture -j4 -P 1kg_hgdp_test.bed 7
 
-Although the model fitting, as we mentioned previously, is very
+Although the model fitting, as we mentioned previously, is
 computationally intensive, this step should complete in the order of
-several minutes on your laptop. The allele frequency file
-<code>1kg_hgdp.7.P</code>, along with other allele frequency files,
-was shared with you separately since the file is quite large.
+several minutes on your laptop. The allele frequency files
+<code>1kg_hgdp.7.P</code> and <code>1kg_hgdp.11.P</code> were shared
+with you separately since they are quite large.
 
 If you have taken the Ancestry or 23andme DNA test, and you are
 especially motivated, you can also include your genotypes in the test
-set.
+set. Note that you will need PLINK for this.
 
+Once you have downloaded your genotypes (see above), the next step is
+to create a .map and .ped file from the format used by Ancestry or
+23andme. We have written two R scripts,
+[ancestry2ped.R](/R/ancestry2ped.R) and
+[23andme2ped.R](/R/23andme2ped.R), to accomplish this. Let's suppose
+that you have run these scripts to reformat your Ancestry and 23andme
+genotypes, and your name is Frida Kahlo. Then you should have these
+four files (the exact names of the files aren't important):
+
+     frida_kahlo_adna.ped
+     frida_kahlo_adna.map
+     frida_kahlo_23andme.ped
+     frida_kahlo_23andme.map
+
+Next, merge these genotypes with the other test samples, and create a
+.bed file, with the following commands:
+
+    cat 1kg_hgdp_test.ped frida_kahlo_adna.ped \
+	  frida_kahlo_23andme.ped > mytest.ped
+	cp 1kg_hgdp_test.map mytest.map
+	plink2 --file mytest --make-bed --out mytest
+
+Now you are ready to run ADMIXTURE on this test set augmented with
+your genotypes.
+	 
 *Items to include in this exercise:*
 
 - Predict admixture proportions in test samples using the allele

@@ -18,10 +18,10 @@
 
 # SCRIPT PARAMETERS
 # -----------------
-out.prefix <- "peter_carbonetto_adna1"
-geno.file  <- "peter_carbonetto_adna1.txt"
+out.prefix <- "sylvia_plath_adna1"
+geno.file  <- "sylvia_plath_adna1.txt"
 bim.file   <- "../data/panel/1kg_hgdp.bim"
-iid        <- "pc1"
+iid        <- "sp1"
 fid        <- 0
 
 # READ GENOTYPE DATA
