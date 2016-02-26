@@ -19,7 +19,7 @@
 # SCRIPT PARAMETERS
 # -----------------
 out.prefix <- "peter_carbonetto_adna1"
-geno.file  <- "peter_carbonetto_adna.txt"
+geno.file  <- "peter_carbonetto_adna1.txt"
 bim.file   <- "../data/panel/1kg_hgdp.bim"
 iid        <- "pc1"
 fid        <- 0
