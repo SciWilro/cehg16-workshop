@@ -8,7 +8,7 @@
 # retain all the genotype data).
 out.prefix <- "peter_carbonetto_23andme"
 geno.file  <- "peter_carbonetto_23andme.txt"
-bim.file   <- NULL
+bim.file   <- "../data/panel/1kg_hgdp.bim"
 iid        <- "pc3"
 fid        <- 0
 
