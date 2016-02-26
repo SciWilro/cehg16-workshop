@@ -104,6 +104,8 @@ have been developed for the specific purpose of visualizing population
 structure from programs such as STRUCTURE and ADMIXTURE, we will see
 that only a few lines of R code are necessary to develop effective
 visualizations of these data.
+ 
+#### ADMIXTURE output files
 
 In the standard invocation, ADMIXTURE outputs two files: a text file
 that ends with .P, and another that ends with .Q. The first text file
@@ -132,6 +134,8 @@ them: <code>admixture --seed=1 1kg_hgdp.bed K</code>, where K is 7 or
 running ADMIXTURE. We ran ADMIXTURE with K = 7 and K = 11 ancestral
 populations in order to capture population structure at two different
 resolutions.
+
+#### R scripts
 
 For this exercise, we have developed two R scripts:
 [plot.admixture.by.pop.R](/R/plot.admixture.by.pop.R) and
