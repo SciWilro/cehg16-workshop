@@ -194,7 +194,7 @@ Next: Introduce PLINK files.
 
 - Optional: estimate admixture proportions from your own
   genotypes. give instructions here for adding your AncestryDNA or
-  23andme genotypes to the test set.
+  23andme genotypes to the test set. 
 
 #### Questions
 

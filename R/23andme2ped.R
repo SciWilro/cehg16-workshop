@@ -1,4 +1,20 @@
-# TO DO: Explain here what this script does, and how to use it.
+# This R script converts genotypes stored in a text file downloaded
+# from your 23andme account (http://you.23andme.com/tools/data/download)
+# into a PLINK .ped file. There is probably a combination of PLINK
+# commands that could accomplish some of what this script does in R.
+#
+# Several variables need to be set to run this script:
+#
+#   geno.file   file containing 23andme genotype data.
+#   out.prefix  name of .map and .ped files to generate.
+#   iid         sample identifier in PLINK file.
+#   fid         family identifier in PLINK file.
+#   bim.file    Optionally, you can specify a PLINK .bim file to
+#               match the SNPs against. The final .ped file will
+#               contain genotypes for exactly the SNPs listed in this
+#               .bim file; for any SNPs that are not in the 23andme
+#               genotype file, the genotypes are set to missing ("0").
+#
 
 # SCRIPT PARAMETERS
 # -----------------
