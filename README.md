@@ -166,14 +166,17 @@ labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
 In this second exercise, we will use the ADMIXTURE results we
 generated from the combined HGDP + 1000 Genomes genotype panel to make
-admixture predictions for new genotype samples. We will show that once
+admixture predictions for new genotype samples. We will see that once
 the hard work of fitting the ADMIXTURE model has already been
-accomplished, estimating admixture for new samples is very fast. Here
-we will continue to work with the HGDP and 1000 Genomes data, but
-optionally you may also apply this analysis to your own genotypes
-(e.g., downloaded from your Ancestry or 23andme account).
+accomplished, estimating admixture proportions for new samples is very
+fast. Here we will continue to work with the HGDP and 1000 Genomes
+data, but optionally you may also apply this analysis to your own
+genotypes (e.g., downloaded from your Ancestry or 23andme account).
 
 Next: Introduce PLINK files.
+
+     mv 1kg_hgdp.7.P 1kg_hgdp_test.7.P.in
+     admixture -P 1kg_hgdp_test.bed 7
 
 *Items to include in this exercise:*
 
@@ -182,15 +185,16 @@ Next: Introduce PLINK files.
   frequencies.
 
 - Predict admixture proportions in test samples using the allele
-  frequencies estimated from the full panel, and from the set with 100
-  fewer samples (**lkg_hgdp_train**).
+  frequencies estimated from the full panel, and from the data set
+  with 100 fewer samples (**lkg_hgdp_train**).
 
 - Note that we have observed some differences in smaller admixture
   proportions (typically less than 1%) when using the -P option.
   Suyash (who helped develop this option) is investigating this.
 
-- Also give instructions here for adding your AncestryDNA or 23andme
-  genotypes to the test set.
+- Optional: estimate admixture proportions from your own
+  genotypes. give instructions here for adding your AncestryDNA or
+  23andme genotypes to the test set.
 
 #### Questions
 
@@ -205,6 +209,8 @@ Next: Introduce PLINK files.
   panel **1kg_hgdp_train** with n samples. Do you get different
   results for some samples? If so, why?
 
+- *Optional:* Run with K=11.
+  
 - *Optional:* Run **admixture -P** with different seeds. Do you get a
   different result when you run it with different seeds?
 
