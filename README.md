@@ -297,7 +297,7 @@ your results.
   
 ### Exit slip
 
-*Add exit slip here.*
+*To do: add exit slip here.*
 
 ### Some background on the genotype data
 
