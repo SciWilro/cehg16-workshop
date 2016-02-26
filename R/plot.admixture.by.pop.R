@@ -12,6 +12,7 @@
 #   admix.file   ADMIXTURE output giving estimated admixture proportions.
 #   int          Quantiles of admixture statistics to plot as error bars.
 #
+library(grid)
 library(ggplot2)
 
 # SCRIPT PARAMETERS
