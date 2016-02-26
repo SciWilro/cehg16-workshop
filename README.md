@@ -55,9 +55,7 @@ url</code>, where <code>url</code> is the "clone url" next to the
 6. We use PLINK for some of the optional exercises. Download and
 install PLINK from [here](http://www.cog-genomics.org/plink2).
 
-7. Optionally, download genotype data from your
-[Ancestry](images/screenshot-of-ancestry-rawdata-download.png) and/or
-[23andme](images/screenshot-of-23andme-rawdata-download.png) accounts.
+7. Optionally, download genotype data from your personal account.
 
 8. Finally, there are a few other data files that are too large to be
 included in this repository, so they will have to be downloaded
