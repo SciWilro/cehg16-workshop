@@ -1,9 +1,9 @@
-# TO DO: Explain here what this script goes.
+# Short script to visualize admixture estimates for a single sample.
 library(lattice)
 
 # SCRIPT PARAMETERS
 # -----------------
-id         <- "pc1"
+id         <- "js1"
 fam.file   <- "mytest.fam"
 admix.file <- "mytest.7.Q"
 clr        <- "darkorange"
