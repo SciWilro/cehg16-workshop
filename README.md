@@ -182,6 +182,8 @@ fast. Here we will continue to work with the HGDP and 1000 Genomes
 data, but optionally you may also apply this analysis to your own
 genotypes (e.g., downloaded from your Ancestry or 23andme account).
 
+#### PLINK files
+
 Here we will work with PLINK data files. These files have been shared
 with you separately because they are too large to store in the public
 github repository. First, take a look at files
@@ -208,6 +210,8 @@ Genomes panel with 2,756 genotype samples, and this panel split into a
 respectively. Once you have genotypes stored in this format, you can
 analyze these genotypes using ADMIXTURE.
 
+#### The ADMIXTURE -P option
+
 Now that we have explored the genotype data files in PLINK format, we
 are ready to estimate ancestral admixture from previously computed
 population allele frequencies. For example, to estimate admixture
@@ -224,6 +228,8 @@ computationally intensive, this step should complete in the order of
 several minutes on your laptop. The allele frequency files
 <code>1kg_hgdp.7.P</code> and <code>1kg_hgdp.11.P</code> were shared
 with you separately since they are quite large.
+
+#### Testing ADMIXTURE on your genotypes
 
 If you have taken the Ancestry or 23andme DNA test, and you are
 especially motivated, you can also include your genotypes in the test
@@ -269,6 +275,9 @@ your genotypes.
   23andme genotypes to the test set. 
 
 #### Questions
+
+- Compare admixture estimates in the test samples with the admixture
+  estimates obtained by. Use R scripts 
 
 - Start by comparing admixture estimates in test samples obtained by
   running ADMIXTURE on all data, and by using -P option on test
