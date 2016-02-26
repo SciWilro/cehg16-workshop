@@ -1,4 +1,14 @@
-# TO DO: Explain here what this script does, and how to use it.
+# This R script summarizes the differences in two sets of admixture
+# estimates. These are the parameters that need to be set before
+# running this script:
+#
+#   labels.file  Text file containing group/region labels for samples.
+#   admix.file1  ADMIXTURE output containing first admixture estimates.
+#   admix.file2  ADMIXTURE output containing second admixture estimates.
+#   fam.file1    PLINK .fam file giving sample info for admix.file1.
+#   fam.file2    PLINK .fam file giving sample info for admix.file2.
+#
+library(grid)
 library(ggplot2)
 
 # SCRIPT PARAMETERS
@@ -7,7 +17,7 @@ labels.file <- "../data/panel/1kg_hgdp.lab"
 fam.file1   <- "../data/panel/1kg_hgdp.fam"
 fam.file2   <- "../data/panel/1kg_hgdp_test.fam"
 admix.file1 <- "../data/admixture/1kg_hgdp.7.Q"
-admix.file2 <- "test1.admix"
+admix.file2 <- "1kg_hgdp_test.7.Q"
 
 # These are the shapes and colours used to plot the results.
 clrs <- rep(c("darkorange","dodgerblue","forestgreen","red","navyblue","gold",
@@ -60,9 +70,10 @@ rm(labels)
 # proportion for the ancestral population that shows the largest
 # difference between the two estimates. Therefore, this plot gives a
 # summary of the maximum admixture differences.
-cat("Generating summary of differences in admixture estimates.\n")
+cat("Distribution of largest differences in admixture estimates:\n")
 dev.new(height = 5,width = 7.75)
-i <- apply(abs(admix1 - admix2),1,function (x) which.max(x))
+print(quantile(apply(abs(admix1 - admix2),1,max),seq(0,1,0.1)),digits = 2)
+i <- apply(abs(admix1 - admix2),1,which.max)
 print(ggplot(data.frame(x     = admix1[cbind(1:n,i)],
                         y     = admix2[cbind(1:n,i)],
                         label = panel$label),
