@@ -173,7 +173,31 @@ fast. Here we will continue to work with the HGDP and 1000 Genomes
 data, but optionally you may also apply this analysis to your own
 genotypes (e.g., downloaded from your Ancestry or 23andme account).
 
-Next: Introduce PLINK files.
+Here we will work with the data files in PLINK format. These files
+have been shared with you separately because they are too large to
+store in the public github repository. First, take a look at files
+**1kg_hgdp_test.map** and *1kg_hgdp_test.ped*. The first file gives us
+information about the 162,645 SNPs; each line gives, from left to
+right, the chromosome, SNP database identifier, genetic distance
+(which isn't used here, so it is set to 0), and the base-pair
+position.
+
+The second, much larger text file contains the genotypes at these
+SNPs, in which each line of this file corresponds to a sample. The
+left-most 6 entries of each line are not used here, except the sample
+id in the second column. The remaining entries give the called
+genotypes; each pair of letters (e.g., "A G") gives the genotype at a
+SNP in the .map file.
+
+Storing the genotypes in this way is very inefficient, so the rest of
+the genotype data are stored in the more compressed ".bed"
+format. (For more details on PLINK file formats, see
+[here](http://www.cog-genomics.org/plink2/formats).) The .bed files
+store the genotype data for three data sets: the full HGDP + 1000
+Genomes panel with 2,756 genotype samples, and this panel split into a
+"training" and "test" set with 2,656 and 100 samples,
+respectively. Once you have genotypes stored in this format, you can
+analyze these genotypes using ADMIXTURE.
 
      mv 1kg_hgdp.7.P 1kg_hgdp_test.7.P.in
      admixture -P 1kg_hgdp_test.bed 7
