@@ -181,7 +181,7 @@ quickly estimate admixture proportions for any number of new
 individuals (e.g., AncestryDNA customers). Here we will continue to
 work with the HGDP and 1000 Genomes data, but optionally you may also
 apply this analysis to your own genotypes (e.g., downloaded from your
-Ancestry or 23andme account).
+personal account).
 
 #### PLINK files
 
@@ -232,29 +232,17 @@ with you separately since they are quite large.
 
 #### Testing ADMIXTURE with your own genotypes
 
-If you have taken the Ancestry or 23andme DNA test, and you are
-especially motivated, you can also include your genotypes in the test
-set. Note that you will need PLINK for this.
+If you have taken a DNA test, and you are especially motivated, you
+can also include your genotypes in the test set. Note that you will
+need PLINK for this.
 
-Once you have downloaded your genotypes (see above), the next step is
-to create a .map and .ped file from the format used by Ancestry or
-23andme. We have written two R scripts,
-[ancestry2ped.R](/R/ancestry2ped.R) and
-[23andme2ped.R](/R/23andme2ped.R), to accomplish this. Let's suppose
-that you have run these scripts to reformat your Ancestry and 23andme
-genotypes, and your name is Frida Kahlo. Then you should have these
-four files (the exact names of the files aren't important):
+Let's suppose you have taken two DNA tests, and your name is Frida
+Kahlo. Assuming that you have the genotypes stored in two separate
+.ped files, merge these genotypes with the other test samples, and
+create a .bed file, with the following commands:
 
-     frida_kahlo_adna.ped
-     frida_kahlo_adna.map
-     frida_kahlo_23andme.ped
-     frida_kahlo_23andme.map
-
-Next, merge these genotypes with the other test samples, and create a
-.bed file, with the following commands:
-
-    cat 1kg_hgdp_test.ped frida_kahlo_adna.ped \
-	  frida_kahlo_23andme.ped > mytest.ped
+    cat 1kg_hgdp_test.ped frida_kahlo_dna1.ped \
+	  frida_kahlo_dna2.ped > mytest.ped
 	cp 1kg_hgdp_test.map mytest.map
 	plink2 --file mytest --make-bed --out mytest
 
@@ -262,10 +250,6 @@ Now you are ready to run ADMIXTURE on this test set augmented with
 your genotypes. You may find script
 [plot.myadmixture.R](/R/plot.myadmixture.R) useful for visualizing
 your results.
-	 
-- Predict admixture proportions in test samples using the allele
-  frequencies estimated from the full panel, and from the data set
-  with 100 fewer samples (1kg_hgdp_train).
 
 #### Questions
 
