@@ -40,17 +40,17 @@ software on your computer for generating graphics (see
 instructions specific to Mac OS X).
 
 3. Install the following R packages using function
-**install.packages**: lattice, latticeExtra, Hmisc, ggplot2.
+install.packages: lattice, latticeExtra, Hmisc, ggplot2.
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
 
 5. Download the files from this github repository. This can be
 accomplished in one of two ways. You can either download all the files
-in a single ZIP file by clicking the **Download ZIP** button. Or you can
+in a single ZIP file by clicking the "Download ZIP" button. Or you can
 "clone" the repository with git by running command <code>git clone
-url</code>, where **url** is the "clone url" next to the
-**SSH** or **HTTPS** button toward the top of the github webpage.
+url</code>, where url is the "clone url" next to the
+"SSH" or "HTTPS" button toward the top of the github webpage.
 
 6. We use PLINK for some of the optional exercises. Download and
 install PLINK from [here](http://www.cog-genomics.org/plink2).
@@ -173,14 +173,14 @@ fast. Here we will continue to work with the HGDP and 1000 Genomes
 data, but optionally you may also apply this analysis to your own
 genotypes (e.g., downloaded from your Ancestry or 23andme account).
 
-Here we will work with the data files in PLINK format. These files
-have been shared with you separately because they are too large to
-store in the public github repository. First, take a look at files
-**1kg_hgdp_test.map** and *1kg_hgdp_test.ped*. The first file gives us
-information about the 162,645 SNPs; each line gives, from left to
-right, the chromosome, SNP database identifier, genetic distance
-(which isn't used here, so it is set to 0), and the base-pair
-position.
+Here we will work with PLINK data files. These files have been shared
+with you separately because they are too large to store in the public
+github repository. First, take a look at files
+<pre>1kg_hgdp_test.map</pre> and <pre>1kg_hgdp_test.ped</pre>. The
+first file gives us information about the 162,645 SNPs; each line
+gives, from left to right, the chromosome, SNP database identifier,
+genetic distance (which isn't used here, so it is set to 0), and the
+base-pair position.
 
 The second, much larger text file contains the genotypes at these
 SNPs, in which each line of this file corresponds to a sample. The
@@ -210,7 +210,7 @@ analyze these genotypes using ADMIXTURE.
 
 - Predict admixture proportions in test samples using the allele
   frequencies estimated from the full panel, and from the data set
-  with 100 fewer samples (**lkg_hgdp_train**).
+  with 100 fewer samples (lkg_hgdp_train).
 
 - Note that we have observed some differences in smaller admixture
   proportions (typically less than 1%) when using the -P option.
@@ -229,8 +229,8 @@ analyze these genotypes using ADMIXTURE.
   results. Do you get different results for some samples?
 
 - Predict admixture using the allele frequencies estimates from the
-  full panel **1kg_hgdp** n samples, and using the slightly smaller
-  panel **1kg_hgdp_train** with n samples. Do you get different
+  full panel *1kg_hgdp* n samples, and using the slightly smaller
+  panel *1kg_hgdp_train* with n samples. Do you get different
   results for some samples? If so, why?
 
 - *Optional:* Run with K=11.
