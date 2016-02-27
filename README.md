@@ -29,7 +29,7 @@ this is helpful for working through the examples on site.
 To get ready for the workshop, please do the following:
 
 1. Download ADMIXTURE 1.3.0
-([link](http://www.genetics.ucla.edu/software/admixture)).
+([link](http://www.genetics.ucla.edu/software/admixture/download.html)).
 
 2. Download and install R ([link](http://cran.r-project.org)). Verify
 that you can create graphics in R by entering command
@@ -61,7 +61,8 @@ install PLINK from [here](http://www.cog-genomics.org/plink2).
 included in this repository, so they will have to be downloaded
 separately. Download these files from the URL that will be given to
 you during the workshop. Alternatively, copy the files from one of the
-USB flash drives that will be circulated during the workshop.
+USB flash drives that will be circulated during the workshop. Once you
+have obtained the tar.gz archive, decompress it.
 
 **Note:** We are assuming in these exercises that you are using a
 UNIX-based command line, such as Linux, or Terminal in Mac OS X. It is
