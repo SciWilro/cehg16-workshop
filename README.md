@@ -149,8 +149,6 @@ group/region labels to connect the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
 labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
-The scripts admixture_map1.R and admixture_map2.R plot admixture proportions
-for 1kg samples on the world map.
 #### Questions
 
 - How would you characterize each of the 7 (or 11) ancestral
@@ -254,6 +252,13 @@ your genotypes. You may find script
 [plot.myadmixture.R](/R/plot.myadmixture.R) useful for visualizing
 your results.
 
+
+#### Visualizing Admixture Proportions on the Map
+
+In the R folder you find a script named plot.admixture.by.geolocation.R
+Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
+on the world map.
+
 #### Questions
 
 - Compare the admixture estimates you generated for the test samples
@@ -353,7 +358,7 @@ Supplementary Table 1 of the most recent *1000 Genomes* paper
 ### Contributors
 
 [Peter Carbonetto](www.cs.ubc.ca/spider/pcarbo) and
-[Amir Kermany](http://www.linkedin.com/in/akermany)<br>
+[Amir Kermany @akermany](http://www.linkedin.com/in/akermany)<br>
 [AncestryDNA](http://dna.ancestry.com)<br>
 San Francisco, CA<br>
 March, 2016
