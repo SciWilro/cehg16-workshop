@@ -40,7 +40,9 @@ software on your computer for generating graphics (see
 instructions specific to Mac OS X).
 
 3. Install the following R packages using function
-<code>install.packages</code>: lattice, latticeExtra, Hmisc, ggplot2.
+<code>install.packages</code>: lattice, latticeExtra, Hmisc, ggplot2, 
+rworldmap,ggmap and mapplots.
+
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
