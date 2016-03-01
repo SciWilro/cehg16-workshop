@@ -359,9 +359,8 @@ Supplementary Table 1 of the most recent *1000 Genomes* paper
 
 ### Contributors
 
-[Peter Carbonetto](www.cs.ubc.ca/spider/pcarbo) and
+[Peter Carbonetto](http://www.cs.ubc.ca/spider/pcarbo) and
 [Amir Kermany @akermany](http://www.linkedin.com/in/akermany)<br>
->>>>>>> 31e0588644250bb1c60e83d1e869e613f36fc8df
 [AncestryDNA](http://dna.ancestry.com)<br>
 San Francisco, CA<br>
 March, 2016
