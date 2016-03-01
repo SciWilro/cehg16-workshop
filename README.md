@@ -29,7 +29,7 @@ this is helpful for working through the examples on site.
 To get ready for the workshop, please do the following:
 
 1. Download ADMIXTURE 1.3.0
-([link](http://www.genetics.ucla.edu/software/admixture)).
+([link](http://www.genetics.ucla.edu/software/admixture/download.html)).
 
 2. Download and install R ([link](http://cran.r-project.org)). Verify
 that you can create graphics in R by entering command
@@ -40,7 +40,9 @@ software on your computer for generating graphics (see
 instructions specific to Mac OS X).
 
 3. Install the following R packages using function
-<code>install.packages</code>: lattice, latticeExtra, Hmisc, ggplot2.
+<code>install.packages</code>: lattice, latticeExtra, Hmisc, ggplot2, 
+rworldmap,ggmap and mapplots.
+
 
 4. Optionally, download and install git
 ([link](http://git-scm.com/download)).
@@ -61,7 +63,8 @@ install PLINK from [here](http://www.cog-genomics.org/plink2).
 included in this repository, so they will have to be downloaded
 separately. Download these files from the URL that will be given to
 you during the workshop. Alternatively, copy the files from one of the
-USB flash drives that will be circulated during the workshop.
+USB flash drives that will be circulated during the workshop. Once you
+have obtained the tar.gz archive, decompress it.
 
 **Note:** We are assuming in these exercises that you are using a
 UNIX-based command line, such as Linux, or Terminal in Mac OS X. It is
@@ -251,6 +254,13 @@ your genotypes. You may find script
 [plot.myadmixture.R](/R/plot.myadmixture.R) useful for visualizing
 your results.
 
+
+#### Visualizing Admixture Proportions on the Map
+
+In the R folder you find a script named plot.admixture.by.geolocation.R
+Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
+on the world map.
+
 #### Questions
 
 - Compare the admixture estimates you generated for the test samples
@@ -349,8 +359,9 @@ Supplementary Table 1 of the most recent *1000 Genomes* paper
 
 ### Contributors
 
-[Peter Carbonetto](http://www.cs.ubc.ca/spider/pcarbo) and
-[Amir Kermany](http://www.linkedin.com/in/akermany)<br>
+[Peter Carbonetto](www.cs.ubc.ca/spider/pcarbo) and
+[Amir Kermany @akermany](http://www.linkedin.com/in/akermany)<br>
+>>>>>>> 31e0588644250bb1c60e83d1e869e613f36fc8df
 [AncestryDNA](http://dna.ancestry.com)<br>
 San Francisco, CA<br>
 March, 2016
