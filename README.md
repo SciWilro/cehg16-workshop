@@ -289,7 +289,10 @@ on the world map.
   
 ### Exit slip
 
-*To do: add exit slip here.*
+We would like your feedback on this workshop, and any followup
+questions you have. Please email Peter Carbonetto
+(pcarbonetto@ancestry.com) and/or Amir Kermany
+(akermany@ancestry.com).
 
 ### Some background on the genotype data
 
