@@ -151,7 +151,7 @@ group/region labels to connect the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
 labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
-##Visualizing Admixture Proportions on the Map
+#####Visualizing Admixture Proportions on the Map
 
 In the R folder you find the script [plot.admixture.by.geolocation] (/R/plot.admixture.by.geolocation)
 Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
