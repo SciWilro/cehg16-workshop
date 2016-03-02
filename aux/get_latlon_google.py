@@ -1,7 +1,6 @@
 #!/usr/bin/python
-#this script can be used to get the lat/lon of a given addess/locaion using google API
+#this script can be used to get lat/lon of a given addess/locaion using google API
 import sys,json,urllib
-
 base="http://maps.googleapis.com/maps/api/geocode/json?address="
 if len(sys.argv)!=2:
 	adr=raw_input('Enter the address/location of interest:\n').split(" ")
