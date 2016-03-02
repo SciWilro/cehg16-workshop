@@ -61,8 +61,8 @@ install PLINK from [here](http://www.cog-genomics.org/plink2).
 
 8. Finally, there are a few other data files that are too large to be
 included in this repository, so they will have to be downloaded
-separately. Download these files from the URL that will be given to
-you during the workshop. Alternatively, copy the files from one of the
+separately. Download these files from the [here] (http://tinyurl.com/ztdsc8y).
+Alternatively, copy the files from one of the
 USB flash drives that will be circulated during the workshop. Once you
 have obtained the tar.gz archive, decompress it.
 
