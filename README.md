@@ -151,9 +151,22 @@ group/region labels to connect the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
 labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
-[plot.admixture.by.geolocation] (/R/plot.admixture.by.geolocation)
-We use this script to visualize the avergae admixture proportions for 1kg samples
-on the map. 
+Visualizing Admixture Proportions on the Map
+
+In the R folder you find the script [plot.admixture.by.geolocation] (/R/plot.admixture.by.geolocation)
+Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
+on the world map. We use three input files: 
+admixture proportions:
+[1kg_hgdp.7.Q](data/admixture/1kg_hgdp.7.Q)
+individual id and pop labels
+[1kg_hgdp.lab](data/panel/1kg_hgdp.lab)
+and
+information regarding geographic location corresponding to each 1kg population labels
+[1kg.lab.loc](data/panel/1kg.lab.loc)
+Using ggmap which utilized oogle map API we find the lat/lon coordinate of each location and plot 
+the avergae admixture proportions.
+Optional Excerise: Repeat the study with HGDP samples.
+
 #### Questions
 
 - How would you characterize each of the 7 (or 11) ancestral
@@ -256,13 +269,6 @@ Now you are ready to run ADMIXTURE on this test set augmented with
 your genotypes. You may find script
 [plot.myadmixture.R](/R/plot.myadmixture.R) useful for visualizing
 your results.
-
-
-#### Visualizing Admixture Proportions on the Map
-
-In the R folder you find a script named plot.admixture.by.geolocation.R
-Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
-on the world map.
 
 #### Questions
 
