@@ -163,8 +163,9 @@ individual id and pop labels
 and
 information regarding geographic location corresponding to each 1kg population labels
 [1kg.lab.loc](/data/panel/1kg.lab.loc)
-Using ggmap which utilized oogle map API we find the lat/lon coordinate of each location and plot 
-the avergae admixture proportions. Alternatively you can use the python scripy [get_latlon_google.py](aux/get_latlon_google.py) for geocoding
+Using ggmap which utilizes google map API we find the lat/lon coordinate of each location and plot 
+the avergae admixture proportions. Alternatively you can use the python script [get_latlon_google.py](aux/get_latlon_google.py) for geocoding.
+
 Optional Excerise: Repeat the study with HGDP samples.
 
 #### Questions
