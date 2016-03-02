@@ -151,6 +151,9 @@ group/region labels to connect the ADMIXTURE results to prior
 knowledge about the ethnic or geographic origins of the samples. These
 labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
+[plot.admixture.by.geolocation] (/R/plot.admixture.by.geolocation)
+We use this script to visualize the avergae admixture proportions for 1kg samples
+on the map. 
 #### Questions
 
 - How would you characterize each of the 7 (or 11) ancestral
