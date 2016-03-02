@@ -153,16 +153,16 @@ labels are stored in [1kg_hgdp.lab](/data/panel/1kg_hgdp.lab).
 
 #####Visualizing Admixture Proportions on the Map
 
-In the R folder you find the script [plot.admixture.by.geolocation] (/R/plot.admixture.by.geolocation)
+In the R folder you find the script [plot.admixture.by.geolocation.R] (/R/plot.admixture.by.geolocation.R)
 Using this script we will plot the pie chart of the average admxiture proportion (for K=7)
 on the world map. We use three input files: 
 admixture proportions:
-[1kg_hgdp.7.Q](data/admixture/1kg_hgdp.7.Q)
+[1kg_hgdp.7.Q](/data/admixture/1kg_hgdp.7.Q)
 individual id and pop labels
-[1kg_hgdp.lab](data/panel/1kg_hgdp.lab)
+[1kg_hgdp.lab](/data/panel/1kg_hgdp.lab)
 and
 information regarding geographic location corresponding to each 1kg population labels
-[1kg.lab.loc](data/panel/1kg.lab.loc)
+[1kg.lab.loc](/data/panel/1kg.lab.loc)
 Using ggmap which utilized oogle map API we find the lat/lon coordinate of each location and plot 
 the avergae admixture proportions.
 Optional Excerise: Repeat the study with HGDP samples.
